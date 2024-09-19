@@ -31,21 +31,19 @@ if (isset($_SESSION['user']['id'])) {
     <form action="/src/Controllers/login.php" method="POST">
       <div class="mb-3">
         <label for="text" class="form-label">Электронная почта или номер телефона</label>
-        <input type="value" class="form-control" name="value" placeholder="Введите электронную почту или номер  телефона" maxlength="11" <?php Helpers::mayBeHasError('value'); ?>
-      </div>
-      <div class="mb-3">
-        <label for="password" class="form-label">Пароль</label>
-        <input type="password" class="form-control" name="password" placeholder="Введите пароль" <?php Helpers::mayBeHasError('password'); ?>
-      </div>
-      <div class="mb-3">
-        <div
-            id="captcha-container"
-            class="smart-captcha"
-            data-sitekey="<?php echo CLIENT_ID?>"
-        ></div>
-        <?php Helpers::displayError('smart-token')?> 
-      </div>
-      <button type="submit" class="btn btn-primary">Вход</button>
+        <input type="value" class="form-control" name="value"
+          placeholder="Введите электронную почту или номер  телефона" maxlength="11" <?php Helpers::mayBeHasError('value'); ?> </div>
+        <div class="mb-3">
+          <label for="password" class="form-label">Пароль</label>
+          <input type="password" class="form-control" name="password" placeholder="Введите пароль" <?php Helpers::mayBeHasError('password'); ?> </div>
+          <div class="mb-3">
+            <div id="captcha-container" class="smart-captcha" data-sitekey="<?php echo CLIENT_ID ?>"></div>
+            <?php Helpers::displayError('smart-token') ?>
+          </div>
+          <div class="d-flex justify-content-between">
+            <a href="/src/Controllers/logout.php" class="btn btn-danger">Назад</a>
+            <button type="submit" class="btn btn-primary">Вход</button>
+          </div>
     </form>
   </div>
 </body>

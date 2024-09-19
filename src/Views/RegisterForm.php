@@ -61,7 +61,10 @@ if (isset($_SESSION['user']['id'])) {
         ></div>
         <?php Helpers::displayError('smart-token')?> 
       </div>
-      <button type="submit" class="btn btn-primary">Регистрация</button>
+      <div class="d-flex justify-content-between">
+        <a href="/src/Controllers/logout.php" class="btn btn-danger">Назад</a>
+        <button type="submit" class="btn btn-primary">Регистрация</button>
+      </div>
     </form>
   </div>
 </body>
